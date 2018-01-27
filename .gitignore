@@ -2,3 +2,4 @@
 pcweb/__pycache__
 logger.log
 PCweb/__pycache__/
+pcweb/templatetags/__pycache__/
