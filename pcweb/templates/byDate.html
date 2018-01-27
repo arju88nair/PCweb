@@ -1,0 +1,235 @@
+{% include "partials/header.html" %} {% include "partials/navbar.html" %}
+{% load staticfiles %}
+
+{% load id %}
+
+<section class="breadcrumb_section">
+    <div class="container">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">By Date</a></li>
+                <li class="active"><a href="#">{{ Date }}</a></li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+
+
+    {% include 'partials/multiView.html' %}    <!-- row -->
+
+</div>
+<!-- container -->
+
+<section id="subscribe_section" class="subscribe_section">
+    <div class="row">
+        <form action="#" method="post" class="form-horizontal">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-6 control-label" for="formGroupInputLarge">
+                    <h1><span class="red-color">Sign up</span> for the latest news</h1>
+                </label>
+
+                <div class="col-sm-3">
+                    <input type="text" id="subscribe" name="subscribe" class="form-control input-lg">
+                </div>
+                <div class="col-sm-1">
+                    <input type="submit" value="Sign Up" class="btn btn-large pink">
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- Subscriber Section -->
+    {% include 'partials/footer.html' %}    <!-- row -->
+
+</div>
+<!-- #content-wrapper -->
+
+</div>
+<!-- .offcanvas-pusher -->
+
+<a href="#" class="crunchify-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+
+<div class="uc-mobile-menu uc-mobile-menu-effect">
+    <button type="button" class="close" aria-hidden="true" data-toggle="offcanvas"
+            id="uc-mobile-menu-close-btn">&times;
+    </button>
+    <div>
+        <div>
+            <ul id="menu">
+                <li class="active"><a href="blog.html">News</a></li>
+                <li><a href="category.html">Mobile</a></li>
+                <li><a href="blog.html">Tablet</a></li>
+                <li><a href="category.html">Gadgets</a></li>
+                <li><a href="blog.html">Camera</a></li>
+                <li><a href="category.html">Design</a></li>
+                <li class="dropdown m-menu-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">More
+                    <span><i class="fa fa-angle-down"></i></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="m-menu-content">
+                                <ul class="col-sm-3">
+                                    <li class="dropdown-header">Widget Haeder</li>
+                                    <li><a href="#">Awesome Features</a></li>
+                                    <li><a href="#">Clean Interface</a></li>
+                                    <li><a href="#">Available Possibilities</a></li>
+                                    <li><a href="#">Responsive Design</a></li>
+                                    <li><a href="#">Pixel Perfect Graphics</a></li>
+                                </ul>
+                                <ul class="col-sm-3">
+                                    <li class="dropdown-header">Widget Haeder</li>
+                                    <li><a href="#">Awesome Features</a></li>
+                                    <li><a href="#">Clean Interface</a></li>
+                                    <li><a href="#">Available Possibilities</a></li>
+                                    <li><a href="#">Responsive Design</a></li>
+                                    <li><a href="#">Pixel Perfect Graphics</a></li>
+                                </ul>
+                                <ul class="col-sm-3">
+                                    <li class="dropdown-header">Widget Haeder</li>
+                                    <li><a href="#">Awesome Features</a></li>
+                                    <li><a href="#">Clean Interface</a></li>
+                                    <li><a href="#">Available Possibilities</a></li>
+                                    <li><a href="#">Responsive Design</a></li>
+                                    <li><a href="#">Pixel Perfect Graphics</a></li>
+                                </ul>
+                                <ul class="col-sm-3">
+                                    <li class="dropdown-header">Widget Haeder</li>
+                                    <li><a href="#">Awesome Features</a></li>
+                                    <li><a href="#">Clean Interface</a></li>
+                                    <li><a href="#">Available Possibilities</a></li>
+                                    <li><a href="#">Responsive Design</a></li>
+                                    <li><a href="#">Pixel Perfect Graphics</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- .uc-mobile-menu -->
+
+</div>
+<!-- #main-wrapper -->
+<script>
+    var count = 10
+
+    function loadMore() {
+        console.log("More loaded");
+
+          $.ajax({
+
+            url: '/byDatecroll?page=' + count + "&date=" + "{{Date}}",
+            dataType: "json",
+            success: function (data) {
+                String.prototype.trunc = String.prototype.trunc ||
+                    function (n) {
+                        return (this.length > n) ? this.substr(0, n - 1) + '&hellip;' : this;
+                    };
+                data = JSON.parse(data)
+                count = count + 20
+                $.each(data, function (index, value) {
+                    console.log(value);
+                    removedTitle = value['title'].replace(/[^\w\s]/gi, '_').replace(/\s/g, '_')
+                    console.log(removedTitle)
+
+                    $("#main").append("                    <div class=\"col-md-6 lazy\" style=\"margin-top: 2%;min-height: 400px\">\n" +
+                        "                        <div class=\"category_article_body\">\n" +
+                        "                            <div class=\"top_article_img\">\n" +
+                        "                                <a href=\"/about/" + removedTitle + "/" + value['_id']['$oid'] + "/\"><img\n" +
+                        "                                        style=\"background-image: url({% static 'assets/img/news-placeholder.png' %});background-size:100%\"\n" +
+                        "                                        class=\"media-object\" src=\"" + value['image'] + "\"\n" +
+                        "                                        width=\"350\" height=\"186\" ></a>\n" +
+                        "                            </div>\n" +
+                        "                            <!-- top_article_img -->\n" +
+                        "\n" +
+                        "                            <div class=\"category_article_title\">\n" +
+                        "                                <h5><a href=\"/about/" + removedTitle + "/" + value['_id']['$oid'] + "/\"\n" +
+                        "                                       target=\"_blank\">" + value['title'] + "</a></h5>\n" +
+                        "                            </div>\n" +
+                        "                            <!-- category_article_title -->\n" +
+                        "\n" +
+                        "                            <div class=\"article_date\">\n" +
+                        "                                <a href=\"#\">" + value['published'].trunc(20) + "</a>, by: <a href=\"#\">" + value['source'] + "</a>\n" +
+                        "                            </div>\n" +
+                        "                            <!-- article_date -->\n" +
+                        "\n" +
+                        "                            <div class=\"category_article_content\">\n" +
+                        "                                " + value['summary'].trunc(125) + "\n" +
+                        "\n" +
+                        "                            </div>\n" +
+                        "                            <!-- category_article_content -->\n" +
+                        "\n" +
+                        "                            {#                            <div class=\"article_social\">#}\n" +
+                        "                            {#                                <span><a href=\"#\"><i class=\"fa fa-share-alt\"></i>424 </a> Shares</span>#}\n" +
+                        "                            {#                                <span><i class=\"fa fa-comments-o\"></i><a href=\"#\">4</a> Comments</span>#}\n" +
+                        "                            {#                            </div>#}\n" +
+                        "                            <!-- article_social -->\n" +
+                        "\n" +
+                        "                        </div>\n" +
+                        "                        <!-- category_article_body -->\n" +
+                        "\n" +
+                        "                    </div>\n")
+                });
+                $('#loading').hide();
+            }
+        });
+
+        $(window).bind('scroll', bindScroll);
+    }
+
+    function bindScroll() {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 1500) {
+            $(window).unbind('scroll');
+            loadMore();
+        }
+    }
+
+    $(window).scroll(bindScroll);
+
+    {#    $(document).ready(function () {#}
+    {#        var win = $(window);#}
+    {#        var count = 20#}
+    {#        var flag = false;#}
+    {##}
+    {#        // Each time the user scrolls#}
+    {#        win.scroll(function () {#}
+    {#            // End of the document reached?#}
+    {#            var content_height = $(document).height();#}
+    {#            var content_scroll_pos = $(window).scrollTop();#}
+    {#            var percentage_value = content_scroll_pos * 100 / content_height;#}
+    {#            console.log(percentage_value)#}
+    {##}
+    {#            if (percentage_value >= 50) {#}
+    {#                if (!flag) {#}
+    {#                    flag=true#}
+    {#                    console.log("F")#}
+    {##}
+    {##}
+    {#                    $.ajax({#}
+    {#                        url: '/categoryscroll?page=' + count + "&cat=" + "{{category}}",#}
+    {#                        dataType: 'html',#}
+    {#                        success: function (data) {#}
+    {#                            console.log(data )#}
+    {#                            count=count+20#}
+    {#                            flag=false#}
+    {#                            $('#loading').hide();#}
+    {#                        }#}
+    {#                    });#}
+    {#                }#}
+    {#                $('#loading').hide();#}
+    {##}
+    {#            }#}
+    {##}
+    {#        });#}
+    {#    })#}
+
+
+</script>
+</body>
+
+</html>

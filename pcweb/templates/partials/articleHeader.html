@@ -1,0 +1,114 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- For Google -->
+<meta name="keywords" content="Culminated is an open source platform for reading news and articles from different sources in one
+                        convenient platform.We provide you the news,so you can do reach a better decision of what goes around you" />
+<meta name="description" content="{{ article.title }}" />
+
+<meta name="author" content="Culminated" />
+<meta name="copyright" content="Culminated" />
+<meta name="application-name" content="Culminated" />
+
+<!-- For Facebook -->
+<meta property="og:title" content="{{ article.title }}" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="{{ article.image }}" />
+<meta property="og:url" content="{{article.link}}" />
+<meta property="og:description" content="{{ article.summary }}" />
+
+<!-- For Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ article.title }}" />
+<meta name="twitter:description" content="{{ article.summary }}" />
+<meta name="twitter:image" content="{{ article.image }}" />
+<meta name="twitter:url" content="{{article.link}}" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110473009-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-110473009-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Culminated - IT'S THE NEWS</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/favicon/apple-icon-57x57.png' %}" >
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/favicon"/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'assets/favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'assets/favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/favicon/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'assets/favicon/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- favicon -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel=icon>
+
+    <!-- web-fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- font-awesome -->
+    <link href="{% static 'assets/fonts/font-awesome/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- Mobile Menu Style -->
+    <link href="{% static 'assets/css/mobile-menu.css' %}" rel="stylesheet">
+
+    <!-- Owl carousel -->
+    <link href="{% static 'assets/css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet">
+    <!-- Theme Style -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js' %} for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js' %} doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+
+<script src="{% static 'assets/js/htmlshiv.js' %}"></script>
+<script src="{% static 'assets/js/jquery.lazy.min.js' %}"></script>
+
+    <![endif]-->
+
+
+    <!-- jquery Core-->
+    <script src="{% static 'assets/js/jquery-2.1.4.min.js' %}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+    <!-- Theme Menu -->
+    <script src="{% static 'assets/js/mobile-menu.js' %}"></script>
+
+    <!-- Lazy Menu -->
+    <script src="{% static 'assets/js/jquery.lazy.min.js' %}"></script>
+
+
+    <!-- Owl carousel -->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+
+    <!-- Theme Script -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+
+    <!-- Main Script -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</head>

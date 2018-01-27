@@ -1,0 +1,47 @@
+{% load staticfiles %}
+
+{% load id %}
+
+<div class="widget" id="Health">
+    <div class="widget_title widget_black">
+        <h2>
+            <a href="/category/Health">Health</a>
+        </h2>
+    </div>
+    {% for item in Health %}
+
+    <div class="media">
+        <div class="media-left">
+            <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/">
+                <img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{{item.image}}" width="100" height="100" >
+            </a>
+        </div>
+        <div class="media-body">
+            <h3 class="media-heading">
+                <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">{{item.title}}</a>
+                &nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+            </h3>
+            <span class="media-date">
+                <a href="/byDate/{{item.published|slice:"16"}}">{{item.published|slice:"16" }}</a>, by:
+                <a href="/source/{{item.source}}">{{item.source}}</a>
+            </span>
+<!--
+            <div class="widget_article_social">
+                <span>
+                    <a href="single.html" target="_self">
+                        <i class="fa fa-share-alt"></i>424</a> Shares
+                </span>
+                <span>
+                    <a href="single.html" target="_self">
+                        <i class="fa fa-comments-o"></i>4</a> Comments
+                </span>
+            </div> -->
+        </div>
+    </div>
+
+    {% endfor%}
+
+    <p class="widget_divider">
+        <a href="/category/Health" target="_self">More News&nbsp;&raquo;</a>
+    </p>
+</div>

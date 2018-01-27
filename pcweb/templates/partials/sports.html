@@ -1,0 +1,117 @@
+{% load staticfiles %}
+{% load id %}
+
+<div class="category_section mobile" id="Sports">
+    <div class="article_title header_pink">
+        <h2><a href="/category/Sports" target="_self">Sports</a></h2>
+    </div>
+    <!----article_title------>
+    <div class="category_article_wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="top_article_img">
+                    <a href="/about/{{sportsHeader.title|replace_space}}/{{sportsHeader.uTag}}/" target="_self"><img    onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="img-responsive" width="360" height="308"
+                                               src="{{sportsHeader.image}}" >
+    </a>
+                </div>
+                <!----top_article_img------>
+            </div>
+            <div class="col-md-6">
+                <span class="tag pink">sports</span>
+
+                <div class="category_article_title">
+                    <h2><a href="/about/{{sportsHeader.title|replace_space}}/{{sportsHeader.uTag}}/" target="_self">{{sportsHeader.title}}</a>
+                    <a href="{{sportsHeader.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                    </h2>
+                </div>
+                <!----category_article_title------>
+                <div class="category_article_date"><a href="/byDate/{{sportsHeader.published|slice:"16"}}">{{sportsHeader.published|slice:"16" }}</a>, by: <a href="/source/{{sportsHeader.source}}">{{sportsHeader.source}}</a></div>
+                <!----category_article_date------>
+                <div class="category_article_content">
+                    {{sportsHeader.summary|truncatechars:150}}
+                </div>
+                <!----category_article_content------>
+                <!-- <div class="media_social">
+                    <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Shares</span>
+                    <span><i class="fa fa-comments-o"></i><a href="#">4</a> Comments</span>
+                </div> -->
+                <!----media_social------>
+            </div>
+        </div>
+    </div>
+    <div class="category_article_wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                {% for item in sportsFirstRow %}
+                <div class="media">
+                    <div class="media-left">
+                        <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{{item.image}}"
+         width="122" height="122" ></a>
+                    </div>
+                    <div class="media-body">
+                        <span class="tag pink">sports</span>
+
+                        <h3 class="media-heading"><a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">{{item.title}}</a>
+                        &nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                        </h3>
+                        <span class="media-date"><a href="/byDate/{{item.published|slice:"16"}}">{{item.published|slice:"16" }}</a>,  by: <a href="/source/{{item.source}}">{{item.source}}</a></span>
+
+                        <div class="media_social">
+                            <!-- {% for tag in item.tags %}
+<i class="fa fa-hashtag" aria-hidden="true"></i>{{ tag }}
+{% endfor %} -->
+                            <!-- <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span> -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="col-md-6">
+                {% for item in sportsSecondRow %}
+                <div class="media">
+                    <div class="media-left">
+                        <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{{item.image}}"
+                             width="122" height="122" ></a>
+
+                    </div>
+                    <div class="media-body">
+                        <span class="tag pink">sports</span>
+
+
+                        <h3 class="media-heading"><a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">{{item.title}}</a>
+                        &nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                        </h3>
+                        <span class="media-date"><a href="/byDate/{{item.published|slice:"16"}}">{{item.published|slice:"16" }}</a>,  by: <a href="/source/{{item.source}}">{{item.source}}</a></span>
+
+                        <div class="media_social">
+                            <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span>
+                <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span> -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="media">
+    <div class="media-left">
+        <a href="#"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{% static 'assets/img/cat-mobi-sm4.jpg' %}"
+                         ></a>
+    </div>
+    <div class="media-body">
+        <span class="tag pink">Mobile</span>
+
+        <h3 class="media-heading"><a href="single.html" target="_self">Fully new look slim handset
+            like</a></h3>
+        <span class="media-date"><a href="#">10Aug- 2015</a>,  by: <a href="#">Eric joan</a></span>
+
+        <div class="media_social">
+            <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span>
+            <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span>
+        </div>
+    </div>
+</div> -->
+            </div>
+        </div>
+    </div>
+    <p class="divider"><a href="/category/Sports">More News&nbsp;&raquo;</a></p>
+</div>

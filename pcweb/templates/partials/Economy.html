@@ -1,0 +1,106 @@
+{% load staticfiles %}
+{% load id %}
+<div class="category_section mobile" id="Economy">
+    <div class="article_title header_purple">
+        <h2><a href="/category/Economy" target="_self">Economy</a></h2>
+    </div>
+    <!----article_title------>
+    <div class="category_article_wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="top_article_img">
+                    <a href="/about/{{economyHeader.title|replace_space}}/{{economyHeader.uTag}}/" target="_self"><img  style="background-size: cover;
+background-image: url({% static "assets/img/news-placeholder.png" %});background-size: 100%"   class="img-responsive" width="360" height="308"
+                                               src="{{economyHeader.image}}"  >
+    </a>
+                </div>
+                <!----top_article_img------>
+            </div>
+            <div class="col-md-6">
+                <span class="tag purple">Economy</span>
+
+                <div class="category_article_title">
+                    <h2><a href="/about/{{economyHeader.title|replace_space}}/{{economyHeader.uTag}}/" target="_self">{{economyHeader.title}}</a><a href="{{economyHeader.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></h2>
+                </div>
+                <!----category_article_title------>
+                <div class="category_article_date"><a href="/byDate/{{economyHeader.published|slice:"16"}}">{{economyHeader.published|slice:"16" }}</a>, by: <a href="/source/{{economyHeader.source}}">{{economyHeader.source}}</a></div>
+                <!----category_article_date------>
+                <div class="category_article_content">
+                    {{economyHeader.summary|truncatechars:150}}
+                </div>
+                <!----category_article_content------>
+
+                <!----media_social------>
+            </div>
+        </div>
+    </div>
+    <div class="category_article_wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                {% for item in economyFirstRow %}
+                <div class="media">
+                    <div class="media-left">
+                        <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{{item.image}}"
+         width="122" height="122" ></a>
+                    </div>
+                    <div class="media-body">
+                        <span class="tag purple">Economy</span>
+
+                        <h3 class="media-heading"><a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">{{item.title}}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></h3>
+                        <span class="media-date"><a href="/byDate/{{item.published|slice:"16"}}">{{item.published|slice:"16" }}</a>,  by: <a href="/source/{{item.source}}">{{item.source}}</a></span>
+
+                        <div class="media_social">
+                            <!-- {% for tag in item.tags %}
+<i class="fa fa-hashtag" aria-hidden="true"></i>{{ tag }}
+{% endfor %} -->
+                            <!-- <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span> -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="col-md-6">
+                {% for item in economySecondRow %}
+                <div class="media">
+                    <div class="media-left">
+                        <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{{item.image}}"
+                             width="122" height="122" ></a>
+                    </div>
+                    <div class="media-body">
+                        <span class="tag purple">Economy</span>
+
+                        <h3 class="media-heading"><a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">{{item.title}}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></h3>
+                        <span class="media-date"><a href="/byDate/{{item.published|slice:"16"}}">{{item.published|slice:"16" }}</a>,  by: <a href="/source/{{item.source}}">{{item.source}}</a></span>
+
+                        <div class="media_social">
+                            <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span>
+                <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span> -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="media">
+    <div class="media-left">
+        <a href="#"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{% static 'assets/img/cat-mobi-sm4.jpg' %}"
+                         ></a>
+    </div>
+    <div class="media-body">
+        <span class="tag purple">Mobile</span>
+
+        <h3 class="media-heading"><a href="single.html" target="_self">Fully new look slim handset
+            like</a></h3>
+        <span class="media-date"><a href="#">10Aug- 2015</a>,  by: <a href="#">Eric joan</a></span>
+
+        <div class="media_social">
+            <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span>
+            <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span>
+        </div>
+    </div>
+</div> -->
+            </div>
+        </div>
+    </div>
+    <p class="divider"><a href="/category/Entertainment">More News&nbsp;&raquo;</a></p>
+</div>

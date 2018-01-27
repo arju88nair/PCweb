@@ -1,0 +1,116 @@
+{% load staticfiles %}
+{% load id %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="feature_article_wrapper">
+                <div class="feature_article_img">
+                    <img onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"
+                         class="img top_static_article_img" src="{{ topBanner.image }}"
+                          width="652.500" height="568.453" >
+                </div>
+                <!-- feature_article_img -->
+
+                <div class="feature_article_inner">
+                    <div class="tag_lg red">
+                       Hot News
+                    </div>
+                    <div class="feature_article_title">
+                        <h1>
+                            <a href="/about/{{ topBanner.title|replace_space }}/{{ topBanner.uTag }}/" target="_self">{{ topBanner.title }}</a>
+                        </h1>
+                    </div>
+                    <!-- feature_article_title -->
+
+                    <div class="feature_article_date">
+                         <a href="/byDate/{{topBanner.published|slice:"16"}}">{{ topBanner.published|slice:"16" }}</a>, by: <a href="/source/{{topBanner.source}}">{{ topBanner.source }}</a>
+{#                          <a href="#" target="_self">{{ topBanner.source }}</a>,#}
+{#                            <a href="#" target="_self">at {{ topBanner.published|slice:"16" }}</a>#}
+                    </div>
+                    <!-- feature_article_date -->
+
+                    <div class="feature_article_content">
+                                                    {{ topBanner.summary|truncatechars:100}}
+
+                    </div>
+                    <!-- feature_article_content -->
+
+{#                    <div class="article_social">#}
+{#                            <span>#}
+{#                                <i class="fa fa-share-alt"></i>#}
+{#                                <a href="#">424</a>Shares</span>#}
+{#                        <span>#}
+{#                                <i class="fa fa-comments-o"></i>#}
+{#                                <a href="#">4</a>Comments</span>#}
+{#                    </div>#}
+                    <!-- article_social -->
+
+                </div>
+                <!-- feature_article_inner -->
+
+            </div>
+            <!-- feature_article_wrapper -->
+
+        </div>
+        <!-- col-md-7 -->
+        {% for item in popularBanner %}
+
+            <div class="col-md-5">
+                <div class="feature_static_wrapper" id="sideBa_{{ forloop.counter }}">
+                    <div class="feature_article_img">
+                        <a href="/about/{{ item.Main.0.title|replace_space }}/{{ item.Main.0.uTag }}/">
+                            <img onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"
+                                 class="img" src="{{ item.Main.0.image }}"  width="457.500"
+                                 height="269.719">
+                        </a>
+                    </div>
+                    <!-- feature_article_img -->
+
+                    <div class="feature_article_inner">
+                        <div class="tag_lg purple" id="id_{{ forloop.counter }}">
+                            Top Viewed
+                        </div>
+                        <div class="feature_article_title">
+                            <h1>
+                                <a href="/about/{{ item.Main.0.title|replace_space }}/{{ item.Main.0.uTag }}/"
+                                   target="_self">{{ item.Main.0.title|truncatechars:50 }} </a>
+                            </h1>
+                        </div>
+                        <!-- feature_article_title -->
+
+                        <div class="feature_article_date">
+                            <a href="/source/{{item.Main.0.source}}" target="_self">{{ item.Main.0.source }}</a>,
+                            <a href="/byDate/{{item.Main.0.published|slice:"16"}}" target="_blank">{{ item.Main.0.published|slice:"16" }}</a>
+                        </div>
+                        <!-- feature_article_date -->
+
+                        <div class="feature_article_content">
+                            {{ item.Main.0.summary|truncatechars:100 }}
+                        </div>
+                        <!-- feature_article_content -->
+
+{#                        <div class="article_social">#}
+{#                            <span>#}
+{#                                <i class="fa fa-share-alt"></i>#}
+{#                                <a href="#">424</a>Shares</span>#}
+{#                            <span>#}
+{#                                <i class="fa fa-comments-o"></i>#}
+{#                                <a href="#">4</a>Comments</span>#}
+{#                        </div>#}
+                        <!-- article_social -->
+
+                    </div>
+                    <!-- feature_article_inner -->
+
+                </div>
+                <!-- feature_static_wrapper -->
+
+            </div>
+            <!-- col-md-5 -->
+
+            <!-- col-md-5 -->
+        {% endfor %}
+    </div>
+    <!-- Row -->
+
+</div>

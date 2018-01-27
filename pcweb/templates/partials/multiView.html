@@ -1,0 +1,180 @@
+{% load staticfiles %}
+{% load id %}
+
+<div class="row">
+    <div class="col-md-8">
+        {% if details %}
+            <div class="entity_wrapper">
+                <div class="entity_title header_purple">
+                    <h1>{{ details.0.tag }} News</h1>
+                </div>
+                <!-- entity_title -->
+
+                <div class="entity_thumb">
+                    <img class="img-responsive" src="{{ details.0.image }}">
+                </div>
+                <!-- entity_thumb -->
+
+                <div class="entity_title">
+                    <h3> {{ details.0.title }} </h3>
+                </div>
+                <!-- entity_title -->
+
+                <div class="entity_content">
+                    {{ details.0.description }}
+                </div>
+                <!-- entity_content -->
+
+
+                <!-- entity_social -->
+
+            </div>
+        {% endif %}
+
+        {% if category == 'Business' or category == 'Economy' %}
+            <!-- START Worden Top Gainers and Losers Ticker Widget -->
+            <script src="http://widgets.freestockcharts.com/script/WBIHorizontalTicker2.js?ver=12334"
+                    type="text/javascript"></script>
+            <link href="http://widgets.freestockcharts.com/WidgetServer/WBITickerblue.css" rel="stylesheet"
+                  type="text/css"/>
+            <script>
+                var gainerTick = new WBIHorizontalTicker('gainers');
+                gainerTick.start();
+                var loserTick = new WBIHorizontalTicker('losers');
+                loserTick.start();
+            </script> <!-- End Scrolling Ticker Widget -->
+        {% endif %}
+        {% if category == 'Sports' %}
+            <script src="//www.cricruns.com/widget/widget_livebar_2.js" type="text/javascript"></script>
+
+        {% endif %}
+
+        <!-- entity_wrapper -->
+        <p class="widget_divider"></p>
+        <div class="row" id="main">
+            {% for item in response %}
+
+                <div class="col-md-6 lazy" style="margin-top: 2%;min-height: 400px">
+                    <div class="category_article_body">
+                        <div class="top_article_img">
+                            <a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/"><img
+                                    style="background-image: url({% static "assets/img/news-placeholder.png" %});background-size:100%"
+                                    onerror="this.src='{% static "assets/img/news-placeholder.png" %}';"
+                                    class="media-object" src="{{ item.image }}"
+                                    width="350" height="186"></a>
+                        </div>
+                        <!-- top_article_img -->
+
+                        <div class="category_article_title">
+                            <h5><a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/"
+                                   target="_blank">{{ item.title|truncatechars:60 }}</a>&nbsp;&nbsp;<a
+                                    href="{{ item.link }}" target="_blank"><i class="fa fa-external-link-square"
+                                                                              aria-hidden="true"></i></a></h5>
+                        </div>
+                        <!-- category_article_title -->
+
+                        <div class="article_date">
+                            <a href="#">{{ item.published|slice:"16" }}</a>, by: <a
+                                href="/source/{{ item.source }}">{{ item.source }}</a>
+                        </div>
+                        <!-- article_date -->
+
+                        <div class="category_article_content">
+                            {{ item.summary|truncatechars:150 }}
+
+                        </div>
+                        <!-- category_article_content -->
+
+                        {#                            <div class="article_social">#}
+                        {#                                <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Shares</span>#}
+                        {#                                <span><i class="fa fa-comments-o"></i><a href="#">4</a> Comments</span>#}
+                        {#                            </div>#}
+                        <!-- article_social -->
+
+                    </div>
+                    <!-- category_article_body -->
+
+                </div>
+
+                <!-- col-md-6 -->
+            {% endfor %}
+
+
+        </div>
+        <!-- row -->
+
+        <div class="widget_advertisement">
+            <img class="img-responsive" src="{% static "assets/img/category_advertisement.jpg" %}">
+        </div>
+        <!-- widget_advertisement -->
+
+
+        <!-- row -->
+        <br>
+        <div class="col-sm-12">
+            <p id="loading">
+                <img style=" display: block; margin-left: auto; margin-right: auto;"
+                     src="{% static "assets/img/index.ajax-spinner-preloader.gif" %}" alt="Loading…"/>
+            </p>
+        </div>
+
+    </div>
+    <!-- col-md-8 -->
+
+    <div class="col-md-4">
+        {% include "partials/popular.html" %}
+        <!-- Popular News -->
+
+        <div class="widget hidden-xs m30">
+            <img class="img-responsive adv_img" src="{% static "assets/img/right_add1.jpg" %} " alt="add_one">
+            <img class="img-responsive adv_img" src="{% static "assets/img/right_add2.jpg" %}" alt="add_one2">
+            <img class="img-responsive adv_img" src="{% static "assets/img/right_add3.jpg" %}" alt="add_one3">
+            <img class="img-responsive adv_img" src="{% static "assets/img/right_add4.jpg" %}" alt="add_one4">
+        </div>
+        <!-- Advertisement -->
+
+        <div class="widget hidden-xs m30">
+            <img class="img-responsive widget_img" src="{% static "assets/img/right_add5.jpg" %}" alt="add_one">
+        </div>
+        <!-- Advertisement -->
+
+        <!-- Reviews News -->
+
+
+        <!-- Advertisement -->
+
+        <!-- Most Commented News -->
+
+        <!-- Editor News -->
+
+
+        <!--Advertisement -->
+
+        <div class="widget m30">
+            <div class="widget_title widget_black">
+                <h2><a href="#">Readers Corner</a></h2>
+            </div>
+            <div class="widget_body"><img class="img-responsive left" src="assets/img/reader.jpg"
+            >
+
+                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically
+                    procrastinate B2C
+                    users after installed base benefits. Dramatically visualize customer directed convergence
+                    without</p>
+
+                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically
+                    procrastinate B2C
+                    users after installed base benefits. Dramatically visualize customer directed convergence
+                    without
+                    revolutionary ROI.</p>
+                <button class="btn pink">Read more</button>
+            </div>
+        </div>
+        <!--  Readers Corner News -->
+
+
+        <!--Advertisement-->
+    </div>
+    <!-- col-md-4 -->
+
+</div>

@@ -1,0 +1,47 @@
+{% load staticfiles %}
+{% load id %}
+
+<div class="widget">
+    <div class="widget_title widget_black" id="Popular">
+        <h2>
+            <a href="">Popular News</a>
+        </h2>
+    </div>
+    {% for item in popular %}
+        <div class="media">
+            <div class="media-left">
+                <a href="">
+                    <img style="background-image: url({% static "assets/img/news-placeholder.png" %})"
+                         onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"
+                         class="media-object" src="{{ item.Main.0.image }}"
+                          width="100" height="100">
+                </a>
+            </div>
+            <div class="media-body">
+                <h3 class="media-heading">
+                    <a href="/about/{{item.Main.0.title|replace_space}}/{{item.Main.0.uTag}}/" target="_self">{{ item.Main.0.title }}
+
+                        </a>
+                    <a href="{{item.Main.0.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                </h3>
+                <span class="media-date">
+                <a href="/byDate/{{item.Main.0.published|slice:"16"}}">{{ item.Main.0.published|slice:"16" }}</a>, by:
+                <a href="/source/{{item.Main.0.source}}">{{ item.Main.0.source }}</a>
+            </span>
+
+{#                <div class="widget_article_social">#}
+{#                <span>#}
+{#                    <a href="single.html" target="_self">#}
+{#                        <i class="fa fa-share-alt"></i>424</a> Shares#}
+{#                </span>#}
+{#                    <span>#}
+{#                    <a href="single.html" target="_self">#}
+{#                        <i class="fa fa-comments-o"></i>4</a> Comments#}
+{#                </span>#}
+{#                </div>#}
+            </div>
+        </div>
+    {% endfor %}
+    <p class="widget_divider">
+    </p>
+</div>

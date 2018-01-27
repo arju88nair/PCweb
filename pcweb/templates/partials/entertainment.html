@@ -1,0 +1,72 @@
+{% load staticfiles %}
+{% load id %}
+
+
+<div class="category_section camera" id="Entertainment">
+    <div class="article_title header_orangeEnt">
+        <h2>
+            <a href="/category/Entertainment" target="_self">Entertainment</a>
+        </h2>
+    </div>
+    <!-- article_title -->
+    {% for item in Entertainment %}
+
+    <div class="category_article_wrapper">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="top_article_img">
+                    <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">
+                        <img  onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"   class="" src="{{item.image}}"  width="295" height="200">
+                    </a>
+                </div>
+                <!-- top_article_img -->
+
+            </div>
+            <div class="col-md-7">
+                <span class="tag orange">Entertainment</span>
+
+                <div class="category_article_title">
+                    <h2>
+                        <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">{{item.title}}</a>
+                        &nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                    </h2>
+
+                </div>
+                <!-- category_article_title -->
+
+                <div class="article_date">
+                    <a href="/byDate/{{item.published|slice:"16"}}">{{item.published|slice:"16" }}</a>, by:
+                    <a href="/source/{{item.source}}">{{item.source}}</a>
+                </div>
+                <!----article_date------>
+                <!-- category_article_wrapper -->
+
+                <div class="category_article_content">
+                    {{item.summary|truncatechars:150}}
+                </div>
+                <!-- category_article_content -->
+
+                <!-- <div class="media_social">
+                    <span>
+                        <a href="#">
+                            <i class="fa fa-share-alt"></i>424 </a> Shares</span>
+                    <span>
+                        <i class="fa fa-comments-o"></i>
+                        <a href="#">4</a> Comments</span>
+                </div> -->
+                <!-- media_social -->
+
+            </div>
+            <!-- col-md-7 -->
+
+        </div>
+        <!-- row -->
+
+    </div>
+    <!-- category_article_wrapper -->
+
+    {% endfor %}
+    <p class="divider">
+        <a href="/category/Entertainment">More News&nbsp;&raquo;</a>
+    </p>
+</div>

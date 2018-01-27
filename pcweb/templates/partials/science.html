@@ -1,0 +1,199 @@
+{% load staticfiles %}
+{% load id %}
+
+<div class="category_section gadget" id="Science">
+    <div class="article_title header_black">
+        <h2>
+            <a href="/category/Science" target="_self">Science</a>
+        </h2>
+    </div>
+    <div class="category_article_wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="category_article_body">
+                    <div class="top_article_img">
+                        <a href="/about/{{ ScienceHeader1.title|replace_space }}/{{ ScienceHeader1.uTag }}/"
+                           target="_self">
+                            <img style="width:302px !important ;height:274px !important"
+                                 onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"
+                                 class="img" src="{{ ScienceHeader1.image }}"
+                                alt="feature-top">
+                        </a>
+                    </div>
+                    <!-- top_article_img -->
+
+                    <span class="tag blue">
+                            <a href="/category/Science" target="_self">Science</a>
+                        </span>
+
+                    <div class="category_article_title">
+                        <h2>
+                            <a href="/about/{{ ScienceHeader1.title|replace_space }}/{{ ScienceHeader1.uTag }}/"
+                               target="_self">{{ ScienceHeader1.title }}</a>
+                            <a href="{{ScienceHeader1.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                        </h2>
+                    </div>
+                    <!-- category_article_title -->
+
+                    <div class="article_date">
+                        <a href="#">{{ ScienceHeader1.published|slice:"16" }}</a>, by:
+                        <a href="/source/{{ScienceHeader1.source}}">{{ ScienceHeader1.source }}</a>
+                    </div>
+                    <!----article_date------>
+                    <div class="category_article_content">
+                        {{ ScienceHeader1.summary|truncatechars:100 }}
+                    </div>
+                    <!-- category_article_content -->
+
+                    <!-- <div class="media_social">
+                        <span>
+                            <a href="#">
+                                <i class="fa fa-share-alt"></i>424 </a> Shares</span>
+                        <span>
+                            <i class="fa fa-comments-o"></i>
+                            <a href="#">4</a> Comments</span>
+                    </div> -->
+                    <!-- media_social -->
+
+                </div>
+                <!-- category_article_body -->
+
+                <div class="category_article_list">
+                    {% for item in Science1 %}
+
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/">
+                                    <img style="background-image: url({% static "assets/img/news-placeholder.png" %})"
+                                         onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"
+                                         class="media-object" width="122" height="122" src="{{ item.image }}"
+                                         >
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">
+                                    <a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/"
+                                       target="_self">{{ item.title }}</a>
+                                    &nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                                </h3>
+                                <span class="media-date">
+                                    <a href="#">{{ item.published|slice:"16" }}</a>, by:
+                                    <a href="/source/{{item.source}}">{{ item.source }}</a>
+                                </span>
+
+{#                                <div class="media_social">#}
+{#                                    <span>#}
+{#                                        <a href="#">#}
+{#                                            <i class="fa fa-share-alt"></i>424</a> Shares</span>#}
+{#                                    <span>#}
+{#                                        <a href="#">#}
+{#                                            <i class="fa fa-comments-o"></i>4</a> Comments</span>#}
+{#                                </div>#}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+                <!-- category_article_list -->
+
+            </div>
+            <!-- col-md-6 -->
+
+            <div class="col-md-6">
+                <div class="category_article_body">
+                    <div class="top_article_img">
+                        <a href="/about/{{ ScienceHeader2.title|replace_space }}/{{ ScienceHeader2.uTag }}/">
+                            <img style="width:302px !important ;height:274px !important"
+                                 onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"
+                                 class="img" src="{{ ScienceHeader2.image }}"
+                                alt="feature-top">
+                        </a>
+                    </div>
+                    <!-- top_article_img -->
+
+                    <span class="tag blue">Science</span>
+
+                    <div class="category_article_title">
+                        <h2>
+                            <a href="/about/{{ ScienceHeader2.title|replace_space }}/{{ ScienceHeader2.uTag }}/"
+                               target="_self">{{ ScienceHeader2.title }}
+                            </a>
+                            <a href="{{ScienceHeader2.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                        </h2>
+                    </div>
+                    <!-- category_article_title -->
+
+                    <div class="article_date">
+                        <a href="#">{{ ScienceHeader2.published|slice:"16" }}</a>, by:
+                        <a href="#/source/{{ScienceHeader2.source}}">{{ ScienceHeader2.source }}</a>
+                    </div>
+                    <!-- article_date -->
+
+                    <div class="category_article_content">
+                        {{ ScienceHeader2.summary|truncatechars:100 }}
+                    </div>
+                    <!-- category_article_content -->
+
+                    <!-- <div class="article_social">
+                        <span>
+                            <i class="fa fa-share-alt"></i>
+                            <a href="#">424</a>Shares</span>
+                        <span>
+                            <i class="fa fa-comments-o"></i>
+                            <a href="#">4</a>Comments</span>
+                    </div> -->
+                    <!-- article_social -->
+
+                </div>
+                <!-- category_article_body -->
+
+
+                <div class="category_article_list">
+                    {% for item in Science2 %}
+
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/">
+                                    <img style="background-image: url({% static "assets/img/news-placeholder.png" %})"
+                                         onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"
+                                         class="media-object" width="122" height="122" src="{{ item.image }}"
+                                         >
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">
+                                    <a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/"
+                                       target="_self">{{ item.title }}</a>
+                                    &nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                                </h3>
+                                <span class="media-date">
+                                    <a href="#">{{ item.published|slice:"16" }}</a>, by:
+                                    <a href="/source/{{item.source}}">{{ item.source }}</a>
+                                </span>
+
+                                {#                                <div class="media_social">#}
+                                {#                                    <span>#}
+                                {#                                        <a href="#">#}
+                                {#                                            <i class="fa fa-share-alt"></i>424</a> Shares</span>#}
+                                {#                                    <span>#}
+                                {#                                        <a href="#">#}
+                                {#                                            <i class="fa fa-comments-o"></i>4</a> Comments</span>#}
+                                {#                                </div>#}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+
+    </div>
+    <!-- category_article_wrapper -->
+
+    <p class="divider">
+        <a href="/category/Science">More News&nbsp;&raquo;</a>
+    </p>
+</div>

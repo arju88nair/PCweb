@@ -1,0 +1,117 @@
+{% load staticfiles %}
+{% load id %}
+
+<div class="category_section mobile" id="India">
+    <div class="article_title header_pink">
+        <h2><a href="/category/India" target="_self">India</a></h2>
+    </div>
+    <!----article_title------>
+    <div class="category_article_wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="top_article_img">
+                    <a href="/about/{{indiaHeader.title|replace_space}}/{{indiaHeader.uTag}}/" target="_self"><img   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="img-responsive" width="360" height="308"
+                                               src="{{indiaHeader.image}}" >
+    </a>
+                </div>
+                <!----top_article_img------>
+            </div>
+            <div class="col-md-6">
+                <span class="tag pink">India</span>
+
+                <div class="category_article_title">
+                    <h2><a href="/about/{{indiaHeader.title|replace_space}}/{{indiaHeader.uTag}}/" target="_self">{{indiaHeader.title}}</a>
+                    <a href="{{indiaHeader.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                    </h2>
+                </div>
+                <!----category_article_title------>
+                <div class="category_article_date"><a href="/byDate/{{indiaHeader.published|slice:"16"}}">{{indiaHeader.published|slice:"16" }}</a>, by: <a href="/source/{{indiaHeader.source}}">{{indiaHeader.source}}</a></div>
+                <!----category_article_date------>
+                <div class="category_article_content">
+                    {{indiaHeader.summary|truncatechars:150}}
+                </div>
+                <!----category_article_content------>
+                <!-- <div class="media_social">
+                    <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Shares</span>
+                    <span><i class="fa fa-comments-o"></i><a href="#">4</a> Comments</span>
+                </div> -->
+                <!----media_social------>
+            </div>
+        </div>
+    </div>
+    <div class="category_article_wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                {% for item in indiaFirstRow %}
+                <div class="media">
+                    <div class="media-left">
+                        <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{{item.image}}"
+         width="122" height="122" ></a>
+                    </div>
+                    <div class="media-body">
+                        <span class="tag pink">India</span>
+
+                        <h3 class="media-heading"><a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">{{item.title}}</a>
+                        &nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                        </h3>
+                        <span class="media-date"><a href="/byDate/{{item.published|slice:"16"}}">{{item.published|slice:"16" }}</a>,  by: <a href="/source/{{item.source}}">{{item.source}}</a></span>
+
+                        <div class="media_social">
+                            <!-- {% for tag in item.tags %}
+<i class="fa fa-hashtag" aria-hidden="true"></i>{{ tag }}
+{% endfor %} -->
+                            <!-- <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span> -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="col-md-6">
+                {% for item in indiaSecondRow %}
+                <div class="media">
+                    <div class="media-left">
+                        <a href="/about/{{item.title|replace_space}}/{{item.uTag}}/"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{{item.image}}"
+                             width="122" height="122" ></a>
+
+                    </div>
+                    <div class="media-body">
+                        <span class="tag pink">India</span>
+
+
+                        <h3 class="media-heading"><a href="/about/{{item.title|replace_space}}/{{item.uTag}}/" target="_self">{{item.title}}</a>
+                        &nbsp;&nbsp;<a href="{{item.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a>
+                        </h3>
+                        <span class="media-date"><a href="/byDate/{{item.published|slice:"16"}}">{{item.published|slice:"16" }}</a>,  by: <a href="/source/{{item.source}}">{{item.source}}</a></span>
+
+                        <div class="media_social">
+                            <!-- <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span>
+                <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span> -->
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="media">
+    <div class="media-left">
+        <a href="#"><img  style="background-image: url({% static "assets/img/news-placeholder.png" %})"   onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"class="media-object" src="{% static 'assets/img/cat-mobi-sm4.jpg' %}"
+                         ></a>
+    </div>
+    <div class="media-body">
+        <span class="tag pink">Mobile</span>
+
+        <h3 class="media-heading"><a href="single.html" target="_self">Fully new look slim handset
+            like</a></h3>
+        <span class="media-date"><a href="#">10Aug- 2015</a>,  by: <a href="#">Eric joan</a></span>
+
+        <div class="media_social">
+            <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Shares</span>
+            <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Comments</span>
+        </div>
+    </div>
+</div> -->
+            </div>
+        </div>
+    </div>
+    <p class="divider"><a href="/category/India">More News&nbsp;&raquo;</a></p>
+</div>
