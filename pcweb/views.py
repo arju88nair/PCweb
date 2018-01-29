@@ -348,3 +348,11 @@ def Analytics(request):
     date = now.strftime("%Y-%m-%d %H:%M")
     db.userStats.update({'page': page, 'created_at': date},
                         {'$addToSet': {'users': userIp}}, upsert=True)
+
+
+
+
+def latestNews(request):
+    items = list(db.Main.find({}).limit(5).sort("created_at", pymongo.DESCENDING))
+    random.shuffle(items)
+    return JsonResponse(dumps(items), safe=False)
