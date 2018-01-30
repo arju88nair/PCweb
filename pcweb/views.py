@@ -20,19 +20,19 @@ logger = logging.getLogger(__name__)
 connection = MongoClient('mongodb://localhost:27017/Culminate')
 db = connection.Culminate
 
+
 class HomePageView(TemplateView):
     def get(self, request, **kwargs):
         logging.debug('Home page view for user IP' + request.META['REMOTE_ADDR'])
         popular = popularCall()
         popularBanner = popular[0:2]
 
-
         GeneralRes = DBCall(db.General)
         WorldRes = DBCall(db.World)
         India = DBCall(db.India)
         TopBanner = list(db.Main.find({"$and": [{'source': {'$in': ['BBC', 'Independent', 'The Guardian', 'CNN']}},
                                                 {"image": {"$exists": True}}]}).skip(10).limit(1).sort("created_at",
-                                                                                              pymongo.DESCENDING))
+                                                                                                       pymongo.DESCENDING))
         EntertainmentRes = DBCall(db.Entertainment)
         PoliticsRes = DBCall(db.Politics)
         ScienceRes = DBCall(db.Science)
@@ -41,6 +41,7 @@ class HomePageView(TemplateView):
         Technology = DBCall(db.Technology)
         Business = DBCall(db.Business)
         Economy = DBCall(db.Economy)
+        ticker=latestNews()
 
         context = {
             'generalHeader': GeneralRes[0], 'generalFirstRow': GeneralRes[1:4], 'generalSecondRow': GeneralRes[5:8],
@@ -62,7 +63,9 @@ class HomePageView(TemplateView):
             'indiaHeader': India[0], 'indiaFirstRow': India[1:4], 'indiaSecondRow': India[5:8],
             'popularBanner': popularBanner,
             'topBanner': TopBanner[0],
-            'popular':popular[2:8]
+            'popular': popular[2:8],
+            'ticker':ticker
+
 
         }
 
@@ -237,6 +240,7 @@ def popularCall():
         cache.set(db.Popular, items, timeout=10)
         return items
 
+
 class tagSearch(TemplateView):
     def get(self, request, *args, **kwargs):
         text = request.GET.get('text', '')
@@ -328,6 +332,7 @@ class Sources(TemplateView):
 
         return render(request, 'sources.html', context)
 
+
 class Test(TemplateView):
     def get(self, request, *args, **kwargs):
         response = db.Sources.find({}).sort('tag', 1)
@@ -350,9 +355,7 @@ def Analytics(request):
                         {'$addToSet': {'users': userIp}}, upsert=True)
 
 
+def latestNews():
 
-
-def latestNews(request):
-    items = list(db.Main.find({}).limit(5).sort("created_at", pymongo.DESCENDING))
-    random.shuffle(items)
-    return JsonResponse(dumps(items), safe=False)
+    items = db.Main.find({}).limit(5).sort("created_at", pymongo.DESCENDING)
+    return items
