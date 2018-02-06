@@ -7,7 +7,7 @@ from django.conf.urls import (
 urlpatterns = [
     url(r'^about/(?P<title>[\w.@+-]+)/(?P<id>[\w.@+-]+?)/$', views.individualView.as_view()),
     url(r'^$', views.HomePageView.as_view()),
-    url(r'^category/(?P<category>[\w.@+-]+??)$', views.CategoryView.as_view()),
+    url(r'^category/(?P<category>[\w.@+-]+?)/$', views.CategoryView.as_view()),
     url(r'^source/(?P<source>.+?)/$', views.SourceView.as_view()),
     url(r'^categoryscroll', views.categoryScroll),
     url(r'^sourcescroll', views.sourceScroll),
