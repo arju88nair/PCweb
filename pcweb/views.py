@@ -115,7 +115,8 @@ class individualView(TemplateView):
             {'$sort': {'score': -1}}
         ]))
         similar = similar[1:10]
-        context = {'article': article, 'similar': similar}
+        url='/about/'+ self.kwargs["title"]+'/'+ self.kwargs['id']
+        context = {'article': article, 'similar': similar,'url':url}
         return render(request, 'article.html', context)
 
 

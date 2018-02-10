@@ -4,34 +4,34 @@
 <html>
 <head>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-4215940909874763",
-    enable_page_level_ads: true
-  });
-</script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-4215940909874763",
+            enable_page_level_ads: true
+        });
+    </script>
     <!-- For Google -->
-<meta name="keywords" content="Culminated is an open source platform for reading news and articles from different sources in one
-                        convenient platform.We provide you the news,so you can do reach a better decision of what goes around you" />
-<meta name="description" content="{{ article.title }}" />
+    <meta name="keywords" content="Culminated is an open source platform for reading news and articles from different sources in one
+                        convenient platform.We provide you the news,so you can do reach a better decision of what goes around you"/>
+    <meta name="description" content="{{ article.title }}"/>
 
-<meta name="author" content="Culminated" />
-<meta name="copyright" content="Culminated" />
-<meta name="application-name" content="Culminated" />
+    <meta name="author" content="Culminated"/>
+    <meta name="copyright" content="Culminated"/>
+    <meta name="application-name" content="Culminated"/>
 
-<!-- For Facebook -->
-<meta property="og:title" content="{{ article.title }}" />
-<meta property="og:type" content="article" />
-<meta property="og:image" content="{{ article.image }}" />
-<meta property="og:url" content="{{article.link}}" />
-<meta property="og:description" content="{{ article.summary }}" />
+    <!-- For Facebook -->
+    <meta property="og:title" content="{{ article.title }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image" content="{{ article.image }}"/>
+    <meta property="og:url" content="{{ article.link }}"/>
+    <meta property="og:description" content="{{ article.summary }}"/>
 
-<!-- For Twitter -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="{{ article.title }}" />
-<meta name="twitter:description" content="{{ article.summary }}" />
-<meta name="twitter:image" content="{{ article.image }}" />
-<meta name="twitter:url" content="{{article.link}}" />
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="{{ article.title }}"/>
+    <meta name="twitter:description" content="{{ article.summary }}"/>
+    <meta name="twitter:image" content="{{ article.image }}"/>
+    <meta name="twitter:url" content="{{ article.link }}"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110473009-1"></script>
     <script>
@@ -49,7 +49,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Culminated - IT'S THE NEWS</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/favicon/apple-icon-57x57.png' %}" >
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/favicon/apple-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/favicon"/apple-icon-60x60.png' %}">
     <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/favicon/apple-icon-72x72.png' %}">
     <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/favicon/apple-icon-76x76.png' %}">
@@ -118,4 +118,9 @@
 
     <!-- Main Script -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".fb-comments").attr("data-href", window.location.href);
+        });
+    </script>
 </head>
