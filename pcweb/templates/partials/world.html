@@ -25,8 +25,7 @@
                 <div class="category_article_title">
                     <h2><a href="/about/{{ worldHeader.title|replace_space }}/{{ worldHeader.uTag }}/"
                            target="_self">{{ worldHeader.title }}</a>
-                        <a href="{{ worldHeader.link }}" target="_blank"><i class="fa fa-external-link-square"
-                                                                            aria-hidden="true"></i></a>
+
                     </h2>
                 </div>
                 <!----category_article_title------>
@@ -63,8 +62,8 @@
 
                             <h3 class="media-heading"><a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/"
                                                          target="_self">{{ item.title }}</a>
-                                &nbsp;&nbsp;<a href="{{ item.link }}" target="_blank"><i
-                                        class="fa fa-external-link-square" aria-hidden="true"></i></a>
+{#                                &nbsp;&nbsp;<a href="{{ item.link }}" target="_blank"><i#}
+{#                                        class="fa fa-external-link-square" aria-hidden="true"></i></a>#}
                             </h3>
                             <span class="media-date"><a
                                     href="/byDate/{{ item.published|slice:"16" }}">{{ item.published|slice:"16" }}</a>,  by: <a
@@ -96,8 +95,8 @@
                             <span class="tag purple">World</span>
                             <h3 class="media-heading"><a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/"
                                                          target="_self">{{ item.title }}</a>
-                                &nbsp;&nbsp;<a href="{{ item.link }}" target="_blank"><i
-                                        class="fa fa-external-link-square" aria-hidden="true"></i></a>
+{#                                &nbsp;&nbsp;<a href="{{ item.link }}" target="_blank"><i#}
+{#                                        class="fa fa-external-link-square" aria-hidden="true"></i></a>#}
                             </h3>
                             <span class="media-date"><a
                                     href="/byDate/{{ item.published|slice:"16" }}">{{ item.published|slice:"16" }}</a>,  by: <a
