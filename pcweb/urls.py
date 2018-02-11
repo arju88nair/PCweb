@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^sources', views.Sources.as_view()),
     url(r'^sources', views.Sources.as_view()),
     url(r'^test', views.Test.as_view()),
+    url(r'^redirect/(?P<id>[\w.@+-]+)/(?P<url>.+?)/?$', views.redirectUrl),
 
 
     url(r'^.*/$', views.Error404.as_view(), name='error404')

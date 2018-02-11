@@ -32,7 +32,7 @@
 .ticker-content {
 	font-size: 140%;
 	margin: 0px;
-	padding-top: 9px;
+	padding-top: 8px;
 	position: absolute;
 	color: #1F527B;
 	font-weight: bold;
@@ -42,7 +42,6 @@
 	line-height: 1.2em;
 }
 .ticker-content:focus {
-	none;
 }
 .ticker-content a {
 	text-decoration: none;	

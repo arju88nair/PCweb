@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse, JsonResponse
 from django.views.generic import TemplateView
 from pymongo import MongoClient
@@ -8,6 +8,7 @@ import pymongo
 import logging
 from bson.json_util import dumps
 from datetime import datetime
+
 
 now = datetime.now()
 
@@ -115,8 +116,7 @@ class individualView(TemplateView):
             {'$sort': {'score': -1}}
         ]))
         similar = similar[1:10]
-        url='/about/'+ self.kwargs["title"]+'/'+ self.kwargs['id']
-        context = {'article': article, 'similar': similar,'url':url}
+        context = {'article': article, 'similar': similar}
         return render(request, 'article.html', context)
 
 
@@ -360,3 +360,16 @@ def latestNews():
 
     items = db.Main.find({}).limit(5).sort("created_at", pymongo.DESCENDING)
     return items
+
+
+def redirectUrl(self, request, *args, **kwargs):
+    userIp = request.META['REMOTE_ADDR']
+    id = self.kwargs['id']
+    url = self.kwargs['url']
+    return redirect(url)
+
+
+
+
+
+
