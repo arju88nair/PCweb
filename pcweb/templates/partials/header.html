@@ -95,6 +95,7 @@
     <!-- Theme Style -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/ticker-style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/weather.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js' %} for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js' %} doesn't work if you view the page via file:// -->
@@ -125,10 +126,12 @@
     <!-- Theme Script -->
     <script src="{% static 'assets/js/script.js' %}"></script>
 
-    <!-- Main Script -->
-    <script src="{% static 'assets/js/main.js' %}"></script>
 
     <script src="{% static 'assets/js/jquery.ticker.js' %}"></script>
+    <script src="https://cdn.rawgit.com/monkeecreate/jquery.simpleWeather/master/jquery.simpleWeather.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
     <script type="text/javascript">
         $(function () {
             $('#js-news').ticker();
