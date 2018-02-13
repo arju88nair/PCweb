@@ -42,7 +42,6 @@ class HomePageView(TemplateView):
         Technology = DBCall(db.Technology)
         Business = DBCall(db.Business)
         Economy = DBCall(db.Economy)
-        ticker=latestNews()
 
         context = {
             'generalHeader': GeneralRes[0], 'generalFirstRow': GeneralRes[1:4], 'generalSecondRow': GeneralRes[5:8],
@@ -65,7 +64,6 @@ class HomePageView(TemplateView):
             'popularBanner': popularBanner,
             'topBanner': TopBanner[0],
             'popular': popular[2:8],
-            'ticker':ticker
 
 
         }

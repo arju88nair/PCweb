@@ -1,6 +1,7 @@
 /* Ticker Styling */
 .ticker-wrapper.has-js {
-	margin: 20px 0px 20px 22%;
+	margin: auto;
+	margin-top: 1%;
 	padding: 0px 20px;
 	width: 780px;
 	height: 32px;
