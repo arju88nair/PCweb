@@ -29,7 +29,7 @@
     text-transform: uppercase;
 }
 
-i {
+#weather h2 i {
     color: #fff;
     font-family: weather;
     font-size: 150px;

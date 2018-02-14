@@ -33,8 +33,9 @@
 
         {% if category == 'Business' or category == 'Economy' %}
             <!-- START Worden Top Gainers and Losers Ticker Widget -->
-            <script src="http://widgets.freestockcharts.com/script/WBIHorizontalTicker2.js?ver=12334"
-                    type="text/javascript"></script>
+
+            <script src="{% static 'assets/js/WBIHorizontalTicker2.js' %}"></script>
+
             <link href="http://widgets.freestockcharts.com/WidgetServer/WBITickerblue.css" rel="stylesheet"
                   type="text/css"/>
             <script>
