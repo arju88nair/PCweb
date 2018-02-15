@@ -4,12 +4,12 @@
 <html>
 <head>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-4215940909874763",
-            enable_page_level_ads: true
-        });
-    </script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4215940909874763",
+    enable_page_level_ads: true
+  });
+</script>
     <!-- For Google -->
     <meta name="keywords" content="Culminated is an open source platform for reading news and articles from different sources in one
                         convenient platform.We provide you the news,so you can do reach a better decision of what goes around you"/>
@@ -86,6 +86,8 @@
     <link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet">
     <!-- Theme Style -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/ticker-style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/weather.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js' %} for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js' %} doesn't work if you view the page via file:// -->
@@ -116,8 +118,9 @@
     <!-- Theme Script -->
     <script src="{% static 'assets/js/script.js' %}"></script>
 
-    <!-- Main Script -->
-    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script src="{% static 'assets/js/jquery.ticker.js' %}"></script>
+
     <script>
         $(document).ready(function () {
             $(".fb-comments").attr("data-href", window.location.href);
