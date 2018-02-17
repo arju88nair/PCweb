@@ -7,42 +7,32 @@
             <div class="col-md-8">
                 <div class="entity_wrapper">
                     <div class="entity_title">
-                        <h1><a href="#"> {{ article.title }}</a>&nbsp;&nbsp;<a href="{{article.link}}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i></a></h1>
+                        <h1><a href="#"> {{ article.title }}</a>&nbsp;&nbsp;<a href="{{ article.link }}"
+                                                                               target="_blank"><i
+                                class="fa fa-external-link-square" aria-hidden="true"></i></a></h1>
                     </div>
                     <!-- entity_title -->
                     <div class="entity_meta"><a href="#" target="_self">{{ article.published|slice:"16" }}</a>, by: <a
                             href="#" target="_self"> {{ article.source }}</a>
                     </div>
                     <!-- entity_meta -->
-                    <!--
-                        <div class="entity_rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-full"></i>
-                        </div> -->
-                    <!-- entity_rating -->
 
-                    <!-- <div class="entity_social">
-                        <a href="#" class="icons-sm sh-ic">
-                            <i class="fa fa-share-alt"></i>
-                            <b>424</b> <span class="share_ic">Shares</span>
-                        </a>
-                        <a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a> -->
+                     <div class="entity_social">
+
+
+                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://culminated.co/about/{{ article.title }}/{{ article.uTag }}/" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a>
                     <!--Twitter-->
-                    <!-- <a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a> -->
+                     <a href="https://twitter.com/home?status=https://culminated.co/about/{{ article.title }}/{{ article.uTag }}/" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a>
                     <!--Google +-->
-                    <!-- <a href="#" class="icons-sm inst-ic"><i class="fa fa-google-plus"> </i></a> -->
-                    <!--Linkedin-->
-                    <!-- <a href="#" class="icons-sm tmb-ic"><i class="fa fa-ge"> </i></a> -->
-                    <!--Pinterest-->
-                    <!-- <a href="#" class="icons-sm rss-ic"><i class="fa fa-rss"> </i></a>
-                </div> -->
+                    <a href="https://plus.google.com/share?url=https://culminated.co/about/{{ article.title }}/{{ article.uTag }}/" class="icons-sm inst-ic"><i class="fa fa-google-plus"> </i></a>
+
+                </div>
                     <!-- entity_social -->
 
                     <div class="entity_thumb">
-                        <img class="img" src="{{ article.image }}"  onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';" width="295" height="200">
+                        <img class="img" src="{{ article.image }}"
+                             onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';"
+                             width="295" height="200">
                     </div>
                     <!-- entity_thumb -->
 
@@ -92,7 +82,7 @@
                                             <div class="top_article_img">
                                                 <a href="/about/{{ item.title|replace_space }}/{{ item.uTag }}/"
                                                    target="_self">
-                                                    <img class="" src="{{ item.image }}"  width="295"
+                                                    <img class="" src="{{ item.image }}" width="295"
                                                          height="200"
                                                          onerror="this.onerror=null;this.src='{% static "assets/img/news-placeholder.png" %}';">
                                                 </a>
@@ -151,7 +141,7 @@
                 <!-- Related news -->
 
                 <div class="widget_advertisement">
-                    <img class="img-responsive" src="assets/img/category_advertisement.jpg" >
+                    <img class="img-responsive" src="assets/img/category_advertisement.jpg">
                 </div>
                 <!--Advertisement-->
 
@@ -163,45 +153,44 @@
 
 
                     <div id="disqus_thread"></div>
-<script>
+                    <script>
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://culminated-co.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        /**
+                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                        /*
+                        var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function () { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://culminated-co.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                        powered by Disqus.</a></noscript>
 
 
-
-
-{#                    <div class="fb-comments" data-href="http://127.0.0.1:8000/" data-numposts="5"></div>#}
-{#                    <div id="fb-root"></div>#}
-{#                    <script>(function (d, s, id) {#}
-{#                        var js, fjs = d.getElementsByTagName(s)[0];#}
-{#                        if (d.getElementById(id)) return;#}
-{#                        js = d.createElement(s);#}
-{#                        js.id = id;#}
-{#                        js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=123305744975179';#}
-{#                        fjs.parentNode.insertBefore(js, fjs);#}
-{#                    }(document, 'script', 'facebook-jssdk'));</script>#}
-{#                    <!-- media end -->#}
+                    {#                    <div class="fb-comments" data-href="http://127.0.0.1:8000/" data-numposts="5"></div>#}
+                    {#                    <div id="fb-root"></div>#}
+                    {#                    <script>(function (d, s, id) {#}
+                    {#                        var js, fjs = d.getElementsByTagName(s)[0];#}
+                    {#                        if (d.getElementById(id)) return;#}
+                    {#                        js = d.createElement(s);#}
+                    {#                        js.id = id;#}
+                    {#                        js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=123305744975179';#}
+                    {#                        fjs.parentNode.insertBefore(js, fjs);#}
+                    {#                    }(document, 'script', 'facebook-jssdk'));</script>#}
+                    {#                    <!-- media end -->#}
                 </div>
                 <!--Readers Comment-->
 
                 <div class="widget_advertisement">
-                    <img class="img-responsive" src="assets/img/category_advertisement.jpg" >
+                    <img class="img-responsive" src="assets/img/category_advertisement.jpg">
                 </div>
                 <!--Advertisement-->
 
@@ -436,7 +425,7 @@ s.setAttribute('data-timestamp', +new Date());
                         <h2><a href="#">Readers Corner</a></h2>
                     </div>
                     <div class="widget_body"><img class="img-responsive left" src="assets/img/reader.jpg"
-                                                  >
+                    >
 
                         <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically
                             procrastinate B2C
