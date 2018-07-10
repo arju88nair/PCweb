@@ -74,6 +74,7 @@ class HomePageView(TemplateView):
 class individualView(TemplateView):
     def get(self, request, **kwargs):
         articleId = self.kwargs['id'];
+        articleId=articleId[:16]
         userIp = request.META['REMOTE_ADDR']
         db.PopularPosts.update({'idPost': articleId},
                                {'$addToSet': {'users': userIp}}, upsert=True)
@@ -365,6 +366,7 @@ def redirectUrl(self, request, *args, **kwargs):
     id = self.kwargs['id']
     url = self.kwargs['url']
     return redirect(url)
+
 
 
 
